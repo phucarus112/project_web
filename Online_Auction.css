@@ -1,0 +1,16 @@
+#heading{
+	text-align: center;
+	padding-top: 10px;
+}
+h2{
+	margin-left: 20px;
+}
+.carousel-item{
+	align-content: center;
+}
+.carousel-control-prev-icon{
+	color: black;
+}
+.carousel-control-next-icon{
+	color: black;
+}
