@@ -1,16 +1,21 @@
-#heading{
+#header{
 	text-align: center;
-	padding-top: 10px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	color: green;
 }
 h2{
+	text-align: center;
 	margin-left: 20px;
 }
-.carousel-item{
-	align-content: center;
+.row{
+	text-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
 }
-.carousel-control-prev-icon{
-	color: black;
+.media{
+	padding-top: 5px;
 }
-.carousel-control-next-icon{
-	color: black;
+.media-body{
+	text-align: center;
 }

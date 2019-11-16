@@ -4,11 +4,16 @@
 		<title>Online Auction</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 		<link rel="stylesheet" type="text/css" href="Online_Auction.css">
 	</head>
 	<body>
 		<div id="nav_bar">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark" shadow>
 		  		<a class="navbar-brand" href="#">Online Auction</a>
 		  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" 
 		  		aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,108 +24,151 @@
 				      	<li class="nav-item">
 				        	<a class="nav-link" href="#">Trang chủ</a>
 				      	</li>				      	
-				      	<li class="nav-item dropdown">
-				        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" 
-				        	data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				          	Điện tử</a>
-				        	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-				          		<a class="dropdown-item" href="#">Điện thoại di động</a>
-				          		<a class="dropdown-item" href="#">Máy tính xách tay</a>
-				        	</div>
-				      	</li>
-				      	<li class="nav-item dropdown">
-				        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" 
-				        	data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				          	Người dùng</a>
-				        	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-				          		<a class="dropdown-item" href="#">Guest</a>
-				          		<a class="dropdown-item" href="#">Bidder</a>
-				          		<a class="dropdown-item" href="#">Adminitrastor</a>
-				        	</div>
-				      	</li>
 			    	</ul>
 			  	</div>
 			  	<form class="form-inline my-2 my-lg-0">
 		      		<input class="form-control mr-sm-2" type="search" placeholder="Search">
 		      		<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
 		    	</form>
+		    	<button type="button" class="btn btn-outline-success ml-2" type="submit">Đăng ký</button>
+		    	<button type="button" class="btn btn-outline-success ml-2" type="submit">Đăng nhập</button>
 			</nav>
 		</div>
 		<div id="container">
-			<div id="heading">
-				<h1>Đấu giá trực tuyến</h1>
+			<div id="header">
+				<h1><b>Đấu giá trực tuyến</b></h1>
 			</div>
-			<div id="main">
-				<div id="main-1">
-					<h2>Top 5 sản phẩm gần nhất</h2>
-					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  						<ol class="carousel-indicators">
-    						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  						</ol>
-  						<div class="carousel-inner">
-    						<div class="carousel-item active">
-      							<div class="media">
-									<img src="./Galaxy Note 10/galaxy-note-10-black-1_.jpg" 
-									class="align-self-center mr-3" 
-									width="200px" height="200px">
-									<div class="media-body">
-			    						<h5 class="mt-0">Samsung Galaxy Note 10 Black</h5>
-			    						<p>Giá hiện tại: 15.000.000 VNĐ</p>
-			    						<p>Ngày đăng sản phẩm: 10/10/2019</p>
-			    						<p>Thông tin bidder: abc</p>
-			    						<p>Số lượt ra giá: 5</p>
-  									</div>
-								</div>
-    						</div>
-    						<div class="carousel-item">
-      							<div class="media">
-									<img src="./iPhone 11/iphone-11-white-1.jpg" 
-									class="align-self-center mr-3" 
-									width="200px" height="200px">
-									<div class="media-body">
-			    						<h5 class="mt-0">iPhone 11 White</h5>
-			    						<p>Giá hiện tại: 20.000.000 VNĐ</p>
-			    						<p>Ngày đăng sản phẩm: 10/10/2019</p>
-			    						<p>Thông tin bidder: abc</p>
-			    						<p>Số lượt ra giá: 5</p>
-  									</div>
-								</div>
-    						</div>
-    						<div class="carousel-item">
-      							<div class="media">
-									<img src="./iPhone 11 Pro Max/iphone-11promax-midnightgreen-1.jpg" 
-									class="align-self-center mr-3" width="200px" height="200px">
-									<div class="media-body">
-			    						<h5 class="mt-0">iPhone 11 Pro Max Midnight Green</h5>
-			    						<p>Giá hiện tại: 30.000.000 VNĐ</p>
-			    						<p>Ngày đăng sản phẩm: 10/10/2019</p>
-			    						<p>Thông tin bidder: abc</p>
-			    						<p>Số lượt ra giá: 5</p>
-  									</div>
-								</div>
-    						</div>
-  						</div>
-  						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    						<span class="sr-only">Previous</span>
-  						</a>
-  						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-    						<span class="sr-only">Next</span>
-  						</a>
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="card">
+				  		<h5 class="card-header">Menu</h5>
+				  		<div class="card-body">
+				    		<div class="btn-group">
+						   		<button class="btn btn-primary-success dropdown-toggle" type="button"
+						      	id="dropdownMenuButton" data-toggle="dropdown">Categories</button>
+						   		<div class="dropdown-menu">
+						      		<h5 class="dropdown-header text-success">Điện tử</h5>
+						      		<a class="dropdown-item" href="#">Điện thoại di động</a>
+						      		<a class="dropdown-item" href="#">Máy tính xách tay</a>
+						      		<h5 class="dropdown-header text-success">Người dùng</h5>
+						      		<a class="dropdown-item" href="#">Guest</a>
+						      		<a class="dropdown-item" href="#">Bidder</a>
+						      		<a class="dropdown-item" href="#">Administrator</a>
+						   		</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div id="main-2">
+				<div class="col-sm-9">
+					<h2>Top 5 sản phẩm gần nhất</h2>
+					<div class="media ml-5 mr-5">
+						<img src="./Galaxy Note 10/galaxy-note-10-black-1_.jpg" class="align-self-center"
+						width="200px" height="200px">
+						<div class="media-body">
+							<h5 class="mt-3 mb-3">Samsung Galaxy Note 10 Black</h5>
+							<p>Giá hiện tại: 15.500.000 VNĐ</p>
+							<p>Ngày đăng sản phẩm: 10/10/2019</p>
+			    			<p>Thông tin bidder: abc</p>
+			    			<p>Số lượt ra giá: 5</p>
+						</div>
+					</div>
+					<div class="media ml-5 mr-5">
+						<img src="./iPhone 11 Pro Max/iphone-11promax-midnightgreen-1.jpg" class="align-self-center" 
+						width="200px" height="200px">
+						<div class="media-body">
+							<h5 class="mt-3 mb-3">Apple iPhone 11 Pro Max Mignight Green</h5>
+							<p>Giá hiện tại: 30.000.000 VNĐ</p>
+			    			<p>Ngày đăng sản phẩm: 10/10/2019</p>
+			    			<p>Thông tin bidder: abc</p>
+			    			<p>Số lượt ra giá: 5</p>
+						</div>
+					</div>
+					<div class="media ml-5 mr-5">
+						<img src="./Pixel 3/pixel3-black-1.jpg" class="align-self-center"
+						width="200px" height="200px">
+						<div class="media-body">
+							<h5 class="mt-3 mb-3">Google Pixel 3 Black</h5>
+							<p>Giá hiện tại: 10.000.000 VNĐ</p>
+			    			<p>Ngày đăng sản phẩm: 10/10/2019</p>
+			    			<p>Thông tin bidder: abc</p>
+			    			<p>Số lượt ra giá: 5</p>
+						</div>
+					</div>
 					<h2>Top 5 sản phẩm có nhiều lượt ra giá nhất</h2>
-				</div>
-				<div id="main-3">
+					<div class="media ml-5 mr-5">
+						<img src="./iPhone 11 Pro Max/iphone-11promax-midnightgreen-1.jpg" class="align-self-center"
+						width="200px" height="200px">
+						<div class="media-body">
+							<h5 class="mt-3 mb-3">Apple iPhone 11 Pro Max Mignight Green</h5>
+							<p>Giá hiện tại: 30.000.000 VNĐ</p>
+			    			<p>Ngày đăng sản phẩm: 10/10/2019</p>
+			    			<p>Thông tin bidder: abc</p>
+			    			<p>Số lượt ra giá: 5</p>
+						</div>
+					</div>
+					<div class="media ml-5 mr-5">
+						<img src="./Macbook Pro Touch 2019/macbook-protouch-13-2019-1.jpg" class="align-self-center"
+						width="200px" height="200px">
+						<div class="media-body">
+							<h5 class="mt-3 mb-3">Apple Macbook Pro Touch 13-inch 2019 </h5>
+							<p>Giá hiện tại: 35.000.000 VNĐ</p>
+			    			<p>Ngày đăng sản phẩm: 10/10/2019</p>
+			    			<p>Thông tin bidder: abc</p>
+			    			<p>Số lượt ra giá: 5</p>
+						</div>
+					</div>
+					<div class="media ml-5 mr-5">
+						<img src="./Thinkpad T480/thinkpad-t480-1.jpg" class="align-self-center"
+						width="200px" height="200px">
+						<div class="media-body">
+							<h5 class="mt-3 mb-3">Lenovo Thinkpad T480</h5>
+							<p>Giá hiện tại: 22.000.000 VNĐ</p>
+			    			<p>Ngày đăng sản phẩm: 10/10/2019</p>
+			    			<p>Thông tin bidder: abc</p>
+			    			<p>Số lượt ra giá: 5</p>
+						</div>
+					</div>
 					<h2>Top 5 sản phẩm có giá cao nhất</h2>
-				</div>
+					<div class="media ml-5 mr-5">
+						<img src="./Macbook Pro Touch 2019/macbook-protouch-13-2019-1.jpg" class="align-self-center"
+						width="200px" height="200px">
+						<div class="media-body">
+							<h5 class="mt-3 mb-3">Apple Macbook Pro Touch 13-inch 2019 </h5>
+							<p>Giá hiện tại: 35.000.000 VNĐ</p>
+			    			<p>Ngày đăng sản phẩm: 10/10/2019</p>
+			    			<p>Thông tin bidder: abc</p>
+			    			<p>Số lượt ra giá: 5</p>
+						</div>
+					</div>
+					<div class="media ml-5 mr-5">
+						<img src="./Macbook Air 2019/macbook-air-13-2019-1.jpg" class="align-self-center"
+						width="200px" height="200px">
+						<div class="media-body">
+							<h5 class="mt-3 mb-3">Apple Macbook Air 13-inch 2019</h5>
+							<p>Giá hiện tại: 32.000.000 VNĐ</p>
+			    			<p>Ngày đăng sản phẩm: 10/10/2019</p>
+			    			<p>Thông tin bidder: abc</p>
+			    			<p>Số lượt ra giá: 5</p>
+						</div>
+					</div>
+					<div class="media ml-5 mr-5">
+						<img src="./iPhone 11 Pro Max/iphone-11promax-midnightgreen-1.jpg" class="align-self-center"
+						width="200px" height="200px">
+						<div class="media-body">
+							<h5 class="mt-3 mb-3">Apple iPhone 11 Pro Max Mignight Green</h5>
+							<p>Giá hiện tại: 30.000.000 VNĐ</p>
+			    			<p>Ngày đăng sản phẩm: 10/10/2019</p>
+			    			<p>Thông tin bidder: abc</p>
+			    			<p>Số lượt ra giá: 5</p>
+						</div>
+					</div>
+				</div>			
+			</div>
+			<div class="card-footer text-muted text-center">
+				Created by TripleP Group
 			</div>
 		</div>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="Online_Auction.js"></script>
