@@ -19,3 +19,10 @@ h2{
 .media-body{
 	text-align: center;
 }
+h1{
+	font-family: Parkavenue, cursive
+}
+.btnStyle{
+	position: absolute; 
+	right: 10px;
+}
