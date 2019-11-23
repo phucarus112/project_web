@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Online Auction</title>
+    <title>Watch List</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
@@ -20,39 +20,83 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-		<div class="container">
-			<a class="navbar-brand" href="Online_Auction.html">ONLINE AUCTION</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item  "><a href="Online_Auction.html"  class="nav-link font-size">Home</a></li>
-					<li class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"  data-toggle="dropdown">Categories</a>			
-						<ul class="dropdown-menu" role="menu">
-							<li class="nav-item"><a href="MobileList.html" class="dropdown-item " style="font-size: 14px;">Điện thoại di động</a></li>
-                        	<li class="nav-item"><a href="LaptopList.html" class="dropdown-item "style="font-size: 14px;">Laptop</a></li>					
-						</ul>
-					</li>
-					<li class="nav-item"><a href="SignUp.html" class="nav-link">Sign up</a></li>
-					<li class="nav-item"><a href="SignIn.html" class="nav-link">Sign in</a></li>
-				</ul>
+	<div class="container">
+		 <div class="modal" id="myModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Yêu cầu đã được gửi và đang chờ quản trị phê duyệt</h5>
+						    <button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-footer">
+						    <button type="button" class="btn btn-danger" data-dismiss="modal">Đồng ý</button>
+					</div>			        
+				</div>
 			</div>
 		</div>
-	</nav>
-	<!-- END nav -->
+						  
+	</div>		
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar  ftco-navbar-light" id="ftco-navbar">
+                <div class="container">
+                  <a class="" style="color: black; font-weight: bold;" href="Online_Auction.html">ONLINE AUCTION</a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="oi oi-menu"></span> Menu
+                  </button>
+        
+                  <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav ml-auto">
+                      
+                      <li class="nav-item active "><a href="Online_Auction_Bidder.html" class="nav-link font-size">Home</a></li>
+                      
+                      <li class="nav-item dropdown">
+                          <a href="#" class="nav-link dropdown-toggle"  data-toggle="dropdown">Categories</a>			
+                          <ul class="dropdown-menu" role="menu">
+                                <li class="nav-item"><a href="MobileList_Bidder.html" class="dropdown-item " style="font-size: 14px;">Điện thoại di động</a></li>
+                                <li class="nav-item"><a href="LaptopList_Bidder.html" class="dropdown-item "style="font-size: 14px;">Laptop</a></li>			
+                            </ul>
+                      </li>
+                     <li class="nav-item "><a class="nav-link font-size"
+                      	data-toggle="modal" data-target="#myModal">Permission Seller</a></li>
+
+              		<li class="nav-item">
+              			<a href="Information.html">
+              				<div style="margin-top: 17px; border: none; font-size: 15px; ">
+                        		<img  src="https://www.juventud.gob.do/wp-content/uploads/2016/10/avatar-none-M-400x380.jpg" alt="" width="35" height="35">
+                       			<span style="color: #000">Name_bidder</span>
+                  			</div>   
+              			</a>             				              
+               		</li>
+               		<li class="nav-item">
+              			<a href="Information.html">
+              				<div style="margin-top: 17px; border: none; font-size: 15px; margin-left: 10px; ">
+                        		<img  src="http://2.bp.blogspot.com/-mxAwi5zynAA/VQVFqfKZqmI/AAAAAAAAL6o/9zqIKf8nY6k/s1600/Apps-Notifications-icon.png" alt="" width="35" height="35">
+                       		
+                  			</div>   
+              			</a>             				              
+               		</li>
+                <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle"  data-toggle="dropdown">
+                        </a>			
+                        <ul class="dropdown-menu" role="menu">
+                              <li class="nav-item"><a href="Online_Auction.html" class="dropdown-item " style="font-size: 14px;">Đăng xuất</a></li>
+          		
+                          </ul>
+                        </li>                    
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
 
 	<section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" 
-	style="background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/B2b8RSzfgivu3v9nb/videoblocks-online-shopping-isometric-composition-animation-available-in-4k-uhd-fullhd-and-hd-3d-loopable-realistic-video-footage_h1xaoqkcg_thumbnail-full08.png');" 
+	style="background-image: url('https://img.freepik.com/free-photo/check-list-paper-wooden-clipboard-blue-background_23-2147873848.jpg?size=626&ext=jpg');" 
 	data-stellar-background-ratio="0.5">
       	<div class="overlay"></div>
       	<div class="container">
         	<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
           		<div class="col-md-9 ftco-animate pb-5 text-center">
-          			<p class="breadcrumbs"><span class="mr-2"><a href="Online_Auction.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Laptop List <i class="ion-ios-arrow-forward"></i></span></p>
-            		<h1 class="mb-3 bread">Laptop</h1>
+          			<p class="breadcrumbs"><span class="mr-2"><a href="Online_Auction_Bidder.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Categories Auction List<i class="ion-ios-arrow-forward"></i></span></p>
+            		<h1 class="mb-3 bread">CATEGORIES AUCTION LIST</h1>
           		</div>
         	</div>
       	</div>
@@ -74,7 +118,7 @@
     		<div class="row">
         		<div class="col-md-6">
         			<div class="property-wrap ftco-animate">
-        				<a href="Product_Details.html" class="img col-md" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/81ZtGi50n5L._SL1500_.jpg');"></a>
+        				<a href="Product_Details_Bidder.html" class="img col-md" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/81ZtGi50n5L._SL1500_.jpg');"></a>
         				<div class="text">
 							<p class="h-info"><span class="location">ASUS ZenBook Flip S UX370 Royal Blue</span></p>
         					<p class="price"><span class="orig-price">30.500.000 VNĐ</span></p>
@@ -82,17 +126,17 @@
 								<li class="h-info"><span class="location">Ngày đăng sản phẩm: <small>10/10/2019</small> </span></li>
 								<li class="h-info"><span class="location">Thông tin bidder: abc</span> </li>						
         					</ul>
-        					<h3><a href="Product_Details.html">Thời gian còn lại: 1 giờ</a></h3>
+        					<h3><a href="Product_Details_Bidder.html">Thời gian còn lại: 1 giờ</a></h3>
         					<span class="location">Số lượt ra giá: 5</span>
-        					<button style="border: none;" class="d-flex align-items-center justify-content-center btn-custom">
-									<span >&#10084;</span>
-								</button>
+							<button style="border: none;" type="button" class="d-flex align-items-center justify-content-center btn-custom" onclick="alert('Sản phẩm được thêm vào danh sách yêu thích');"><span >&#10084;</span> </button>
+							                            
+                        
         				</div>
         			</div>
         		</div>
         		<div class="col-md-6">
 					<div class="property-wrap ftco-animate">
-						<a href="properties-single.html" class="img col-md" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/71IQiviMzWL._SL1500_.jpg');"></a>
+						<a href="Product_Details_Bidder.html" class="img col-md" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/71IQiviMzWL._SL1500_.jpg');"></a>
 						<div class="text">
 							<p class="h-info"><span class="location">Apple Macbook Pro Touch 13-inch 2019 Space Grey</span></p>
 							<p class="price"><span class="orig-price">30.000.000 VNĐ</span></p>
@@ -100,17 +144,15 @@
 								<li class="h-info"><span class="location">Ngày đăng sản phẩm: <small>10/10/2019</small> </span></li>
 								<li class="h-info"><span class="location">Thông tin bidder: abc</span> </li>						
 							</ul>
-							<h3><a href="properties-single.html">Thời gian còn lại: 1 giờ</a></h3>
+							<h3><a href="Product_Details_Bidder.html">Thời gian còn lại: 1 giờ</a></h3>
 							<span class="location">Số lượt ra giá: 5</span>
-							<button style="border: none;" class="d-flex align-items-center justify-content-center btn-custom">
-									<span >&#10084;</span>
-								</button>
+							<button style="border: none;" type="button" class="d-flex align-items-center justify-content-center btn-custom" onclick="alert('Sản phẩm được thêm vào danh sách yêu thích');"><span >&#10084;</span> </button>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="property-wrap ftco-animate">
-						<a href="properties-single.html" class="img col-md" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/51EhtxEyPAL._SL1000_.jpg');"></a>
+						<a href="Product_Details_Bidder.html" class="img col-md" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/51EhtxEyPAL._SL1000_.jpg');"></a>
 						<div class="text">
 							<p class="h-info"><span class="location">Lenovo Thinkpad T480 Black</span></p>
 							<p class="price"><span class="orig-price">10.000.000 VNĐ</span></p>
@@ -118,17 +160,15 @@
 								<li class="h-info"><span class="location">Ngày đăng sản phẩm: <small>10/10/2019</small> </span></li>
 								<li class="h-info"><span class="location">Thông tin bidder: abc</span> </li>						
 							</ul>
-							<h3><a href="properties-single.html">Thời gian còn lại: 1 giờ</a></h3>
+							<h3><a href="Product_Details_Bidder.html">Thời gian còn lại: 1 giờ</a></h3>
 							<span class="location">Số lượt ra giá: 5</span>
-							<button style="border: none;" class="d-flex align-items-center justify-content-center btn-custom">
-									<span >&#10084;</span>
-								</button>
+							<button style="border: none;" type="button" class="d-flex align-items-center justify-content-center btn-custom" onclick="alert('Sản phẩm được thêm vào danh sách yêu thích');"><span >&#10084;</span> </button>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="property-wrap ftco-animate">
-						<a href="properties-single.html" class="img col-md" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/51RkDgBwBWL._SL1000_.jpg');"></a>
+						<a href="Product_Details_Bidder.html" class="img col-md" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/51RkDgBwBWL._SL1000_.jpg');"></a>
 						<div class="text">
 							<p class="h-info"><span class="location">MSI GS65 Stealth-432</span></p>
 							<p class="price"><span class="orig-price">10.000.000 VNĐ</span></p>
@@ -136,17 +176,15 @@
 								<li class="h-info"><span class="location">Ngày đăng sản phẩm: <small>10/10/2019</small> </span></li>
 								<li class="h-info"><span class="location">Thông tin bidder: abc</span> </li>						
 							</ul>
-							<h3><a href="properties-single.html">Thời gian còn lại: 1 giờ</a></h3>
+							<h3><a href="Product_Details_Bidder.html">Thời gian còn lại: 1 giờ</a></h3>
 							<span class="location">Số lượt ra giá: 5</span>
-							<button style="border: none;" class="d-flex align-items-center justify-content-center btn-custom">
-									<span >&#10084;</span>
-								</button>
+							<button style="border: none;" type="button" class="d-flex align-items-center justify-content-center btn-custom" onclick="alert('Sản phẩm được thêm vào danh sách yêu thích');"><span >&#10084;</span> </button>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="property-wrap ftco-animate">
-						<a href="properties-single.html" class="img col-md" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/71mOwwF%2BUiL._SL1500_.jpg');"></a>
+						<a href="Product_Details_Bidder.html" class="img col-md" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/71mOwwF%2BUiL._SL1500_.jpg');"></a>
 						<div class="text">
 							<p class="h-info"><span class="location">Dell XPS 13</span></p>
 							<p class="price"><span class="orig-price">26.900.000 VNĐ</span></p>
@@ -154,17 +192,15 @@
 								<li class="h-info"><span class="location">Ngày đăng sản phẩm: <small>10/10/2019</small> </span></li>
 								<li class="h-info"><span class="location">Thông tin bidder: abc</span> </li>						
 							</ul>
-							<h3><a href="properties-single.html">Thời gian còn lại: 1 giờ</a></h3>
+							<h3><a href="Product_Details_Bidder.html">Thời gian còn lại: 1 giờ</a></h3>
 							<span class="location">Số lượt ra giá: 5</span>
-							<button style="border: none;" class="d-flex align-items-center justify-content-center btn-custom">
-									<span >&#10084;</span>
-								</button>
+							<button style="border: none;" type="button" class="d-flex align-items-center justify-content-center btn-custom" onclick="alert('Sản phẩm được thêm vào danh sách yêu thích');"><span >&#10084;</span> </button>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="property-wrap ftco-animate">
-						<a href="properties-single.html" class="img col-md" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/51-9oSG8jAL._SL1024_.jpg');"></a>
+						<a href="Product_Details_Bidder.html" class="img col-md" style="background-image: url('https://images-na.ssl-images-amazon.com/images/I/51-9oSG8jAL._SL1024_.jpg');"></a>
 						<div class="text">
 							<p class="h-info"><span class="location">Apple Macbook Air 13-inch 2019 Space Grey</span></p>
 							<p class="price"><span class="orig-price">26.900.000 VNĐ</span></p>
@@ -172,11 +208,9 @@
 								<li class="h-info"><span class="location">Ngày đăng sản phẩm: <small>10/10/2019</small> </span></li>
 								<li class="h-info"><span class="location">Thông tin bidder: abc</span> </li>						
 							</ul>
-							<h3><a href="properties-single.html">Thời gian còn lại: 1 giờ</a></h3>
+							<h3><a href="Product_Details_Bidder.html">Thời gian còn lại: 1 giờ</a></h3>
 							<span class="location">Số lượt ra giá: 5</span>
-							<button style="border: none;" class="d-flex align-items-center justify-content-center btn-custom">
-									<span >&#10084;</span>
-								</button>
+							<button style="border: none;" type="button" class="d-flex align-items-center justify-content-center btn-custom" onclick="alert('Sản phẩm được thêm vào danh sách yêu thích');"><span >&#10084;</span> </button>
 						</div>
 					</div>
 				</div>

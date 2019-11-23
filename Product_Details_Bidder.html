@@ -20,29 +20,73 @@
      <script src="Online_Auction.js"></script>
 </head>
 <body> 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="Online_Auction.html">ONLINE AUCTION</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav ml-auto">       
-                    <li class="nav-item active "><a href="Online_Auction.html" class="nav-link font-size">Home</a></li>  
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle"  data-toggle="dropdown">Categories</a>			
-                        <ul class="dropdown-menu" role="menu">
-                            <li class="nav-item"><a href="MobileList.html" class="dropdown-item " style="font-size: 14px;">Điện thoại di động</a></li>
-                            <li class="nav-item"><a href="LaptopList.html" class="dropdown-item "style="font-size: 14px;">Laptop</a></li>			
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a href="SignUp.html" class="nav-link">Sign up</a></li>
-                    <li class="nav-item"><a href="SignIn.html" class="nav-link">Sign in</a></li>
-                </ul>
-            </div>
+  <div class="container">
+     <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Yêu cầu đã được gửi và đang chờ quản trị phê duyệt</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Đồng ý</button>
+          </div>              
         </div>
-    </nav>
-	<!-- END nav -->
+      </div>
+    </div>
+              
+  </div>    
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar  ftco-navbar-light" id="ftco-navbar">
+                <div class="container">
+                  <a class="" style="color: black; font-weight: bold;" href="Online_Auction.html">ONLINE AUCTION</a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="oi oi-menu"></span> Menu
+                  </button>
+        
+                  <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav ml-auto">
+                      
+                      <li class="nav-item active "><a href="Online_Auction_Bidder.html" class="nav-link font-size">Home</a></li>
+                      
+                      <li class="nav-item dropdown">
+                          <a href="#" class="nav-link dropdown-toggle"  data-toggle="dropdown">Categories</a>           
+                          <ul class="dropdown-menu" role="menu">
+                                <li class="nav-item"><a href="MobileList_Bidder.html" class="dropdown-item " style="font-size: 14px;">Điện thoại di động</a></li>
+                                <li class="nav-item"><a href="LaptopList_Bidder.html" class="dropdown-item "style="font-size: 14px;">Laptop</a></li>            
+                            </ul>
+                      </li>
+                      <li class="nav-item "><a class="nav-link font-size"
+                        data-toggle="modal" data-target="#myModal">Permission Seller</a></li>
+
+                  <li class="nav-item">
+                    <a href="Information.html">
+                      <div style="margin-top: 17px; border: none; font-size: 15px; ">
+                            <img  src="https://www.juventud.gob.do/wp-content/uploads/2016/10/avatar-none-M-400x380.jpg" alt="" width="35" height="35">
+                            <span style="color: #000">Name_bidder</span>
+                        </div>   
+                    </a>                                  
+                  </li>
+                  <li class="nav-item">
+                    <a href="Information.html">
+                      <div style="margin-top: 17px; border: none; font-size: 15px; margin-left: 10px; ">
+                            <img  src="http://2.bp.blogspot.com/-mxAwi5zynAA/VQVFqfKZqmI/AAAAAAAAL6o/9zqIKf8nY6k/s1600/Apps-Notifications-icon.png" alt="" width="35" height="35">
+                          
+                        </div>   
+                    </a>                                  
+                  </li>
+                <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle"  data-toggle="dropdown">
+                        </a>            
+                        <ul class="dropdown-menu" role="menu">
+                              <li class="nav-item"><a href="Online_Auction.html" class="dropdown-item " style="font-size: 14px;">Đăng xuất</a></li>
+                
+                          </ul>
+                        </li>                    
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- END nav -->
 	
     <section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" 
     style="background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/B2b8RSzfgivu3v9nb/videoblocks-online-shopping-isometric-composition-animation-available-in-4k-uhd-fullhd-and-hd-3d-loopable-realistic-video-footage_h1xaoqkcg_thumbnail-full08.png');"
@@ -65,9 +109,54 @@
       					<div class="img" style="background-image: url(https://images-na.ssl-images-amazon.com/images/I/81mxun%2B6pEL._SL1500_.jpg);"></div>
       					<div class="text text-center">
       						<span class="subheading">Điện thoại di động</span>
-      						<h2>Apple iPhone 11 Pro Max</h2>                                 
-                                    
-                    
+      						<h2>Apple iPhone 11 Pro Max</h2>
+
+                                    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModalCenter">
+                                       Thêm vào danh sách yêu thích &#10084;
+                                    </button>
+                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                      <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Sản phẩm đã được thêm vào danh sách yêu thích</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                          </div>
+                                        
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModal" >Ra giá</button>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Đủ điều kiện đấu giá</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                          </div>
+                                          <div class="modal-body">
+                                            <form>
+                                              <div class="form-group">
+                                                <label for="recipient-name " class="float-left col-form-label">Giá đưa ra:</label>
+                                                <input type="text" class="form-control" id="recipient-name">
+                                              </div>
+                                              
+                                            </form>
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Từ chối</button>
+                                            <button type="button" class="btn btn-primary">Chấp nhận</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <button type="button" class="btn btn-success btn-lg"  >Xem lịch sử đấu giá</button>
       					</div>
       				</div>
                 </div>
