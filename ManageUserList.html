@@ -27,11 +27,12 @@
     <link rel="stylesheet" href="css/style.css">
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<script type="text/javascript">
-	function change(A){
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script type="text/javascript">
+  function change(A){
         for(var i=1;i<=6;i++){
-	        var div = document.createElement("div");
-              div.className = "col-md-4 ftco-animate"
+          var div = document.createElement("div");
+              div.className = "col-md-6 ftco-animate"
                document.getElementById(A).appendChild(div);
 
                var div1 = document.createElement("div");
@@ -106,14 +107,120 @@
                p5.appendChild(pan5);
                div12.appendChild(p5);
 
-             var a3=document.createElement("a3");
-             var button=document.createElement("button");
-             button.innerHTML="&#10084;";
-             button.className="d-flex align-items-center justify-content-center btn-custom";
-              a3.className="d-flex align-items-center justify-content-center btn-custom";
-              //a3.appendChild(button);
-              div12.appendChild(button);             
+                      
 }}
+function change2(A)
+{
+ 
+        for(var i=1;i<=6;i++){
+          var div = document.createElement("div");
+              div.className = "col-md-6 ftco-animate"
+               document.getElementById(A).appendChild(div);
+
+               var div1 = document.createElement("div");
+               div1.className = "agent"
+               div.appendChild(div1);
+                 var div11=document.createElement("div");
+               div11.className="img";
+               div1.appendChild(div11);
+
+               var a1 = document.createElement("a");
+               var linkText = document.createElement("img");
+               linkText.src = "https://images-na.ssl-images-amazon.com/images/I/51-9oSG8jAL._SL1024_.jpg";  
+               linkText.className="img-fluid";
+             //  linkText.alt="Colorlib Template"//////ssssssssssss
+               a1.href = "http://google.com"; 
+               a1.appendChild(linkText);
+               div11.appendChild(a1);   
+             var div12=document.createElement("div");
+               div12.className="desc";
+               div1.appendChild(div12);
+
+               var h3=document.createElement("h3");
+               var a2=document.createElement("a");
+               a1.href = "http://google.com"; 
+               var t1=document.createTextNode("Apple iPhone XS Max Gold")
+               a2.appendChild(t1);
+               h3.appendChild(a2);
+               div12.appendChild(h3);
+
+               var p1=document.createElement("p");
+               p1.className="h-info";
+               var pan1=document.createElement("span");
+               pan1.className=" location";
+               var t2=document.createTextNode("Giá hiện tại: 26.900.000 VNĐ");
+               pan1.appendChild(t2);
+               p1.appendChild(pan1);
+               div12.appendChild(p1);
+
+               var p2=document.createElement("p");
+               p2.className="h-info";
+               var pan2=document.createElement("span");
+               pan2.className=" location";
+               var t3=document.createTextNode("Ngày đăng sản phẩm: 10/10/2019");
+               pan2.appendChild(t3);
+               p2.appendChild(pan2);
+               div12.appendChild(p2);
+
+               var p3=document.createElement("p");
+               p3.className="h-info";
+               var pan3=document.createElement("span");
+               pan3.className=" location";
+               var t4=document.createTextNode("Thông tin bidder: abc");
+               pan3.appendChild(t4);
+               p3.appendChild(pan3);
+               div12.appendChild(p3);
+
+               var p4=document.createElement("p");
+               p4.className="h-info";
+               var pan4=document.createElement("span");
+               pan4.className=" location";
+               var t5=document.createTextNode("Số lượt ra giá: 5");
+               pan4.appendChild(t5);
+               p4.appendChild(pan4);
+               div12.appendChild(p4);    
+
+               var div121=document.createElement("div");
+               div121.className="d-flex justify-content-between";
+               div12.appendChild(div121);
+               var b1=document.createElement("button");
+               b1.style.type="button";    
+               b1.className="btn btn-outline-warning";
+               div121.appendChild(b1);
+               var v=document.createTextNode("Đánh giá");
+             var aa=document.createElement("a");
+              aa.href="DanhGia.html"
+              aa.style.color="yellow";
+              aa.appendChild(v);
+              b1.appendChild(aa);
+
+                var b2=document.createElement("button");
+               b2.style.type="button";    
+               b2.className="btn btn-outline-warning";
+               div121.appendChild(b2);
+               var v1=document.createTextNode("Hủy đơn");
+             var aa1=document.createElement("a");
+              b2.onclick = function() {
+                confirm("Bạn có chắc muốn hủy giao dịch này?")
+              };
+               aa1.style.color="yellow";
+              aa1.appendChild(v1);
+              aa1.href=" ";
+              b2.appendChild(aa1);
+
+                var b3=document.createElement("button");
+               b3.style.type="button";    
+               b3.className="btn btn-outline-warning";
+               div121.appendChild(b3);
+               var v2=document.createTextNode("Mô tả");
+             var aa2=document.createElement("a");
+              aa2.href="ThemMoTa.html"
+              aa2.style.color="yellow";
+              aa2.appendChild(v2);
+              b3.appendChild(aa2);
+            
+}
+}
 
 </script>
   </head>
@@ -138,7 +245,7 @@
 					      
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar  ftco-navbar-light" id="ftco-navbar">
                 <div class="container">
-                  <a class="" style="color: black; font-weight: bold;" href="Online_Auction.html">ONLINE AUCTION</a>
+                  <a class="" style="color: black; font-weight: bold;" href="Trang_chu_kenh_nguoi_ban.html">KÊNH NGƯỜI BÁN</a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="oi oi-menu"></span> Menu
                   </button>
@@ -146,23 +253,12 @@
                   <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
                       
-                      <li class="nav-item active "><a href="Online_Auction_Bidder.html" class="nav-link font-size">Home</a></li>
-                      
-                      <li class="nav-item dropdown">
-                          <a href="#" class="nav-link dropdown-toggle"  data-toggle="dropdown">Categories</a>			
-                          <ul class="dropdown-menu" role="menu">
-                                <li class="nav-item"><a href="MobileList_Bidder.html" class="dropdown-item " style="font-size: 14px;">Điện thoại di động</a></li>
-                                <li class="nav-item"><a href="LaptopList_Bidder.html" class="dropdown-item "style="font-size: 14px;">Laptop</a></li>			
-                            </ul>
-                      </li>
-                      <li class="nav-item "><a class="nav-link font-size"
-                      	data-toggle="modal" data-target="#myModal">Permission Seller</a></li>
-
+                      <li class="nav-item active "><a href="Trang_chu_kenh_nguoi_ban.html" class="nav-link font-size">Home</a></li>
               		<li class="nav-item">
               			<a href="Information.html">
               				<div style="margin-top: 17px; border: none; font-size: 15px; ">
                         		<img  src="https://www.juventud.gob.do/wp-content/uploads/2016/10/avatar-none-M-400x380.jpg" alt="" width="35" height="35">
-                       			<span style="color: #000">Name_bidder</span>
+                       			<span style="color: #000">Adminstration</span>
                   			</div>   
               			</a>             				              
                		</li>
@@ -194,8 +290,7 @@
         <div class="row no-gutters slider-text justify-content-center align-items-center">
           <div class="col-lg-9 col-md-6 ftco-animate d-flex align-items-end text text-center" >
           	<div class="text text-center">
-	            
-	
+	 
             </div>
           </div>
         </div>
@@ -206,52 +301,103 @@
 				</a>
 			</div>
 	</div>
-	<br><br>
-   <section class="ftco-section ftco-agent ftco-no-pt">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-			  	<div class="col-md-12 heading-section text-center ftco-animate">
-				  	<span class="subheading">Online Auction</span>
-					<h2 class="mb-4">Top 5 sản phẩm gần kết thúc</h2>
-			  	</div>
-			</div>
-			<div id ="ha1" class="row">
-			<script type="text/javascript">
-				change("ha1");
-			</script>
-			</div>
-		</div>
-	</section>
-	<section class="ftco-section ftco-agent ftco-no-pt">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-					<span class="subheading">Online Auction</span>
-					<h2 class="mb-4">Top 5 sản phẩm có nhiều lượt ra giá nhất</h2>
-				</div>
-			</div>
-			<div id="ha2" class="row">
-			<script type="text/javascript">
-				change("ha2");
-			</script>
-			</div>
-		</div>
-	</section>
-	<section class="ftco-section ftco-agent ftco-no-pt">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-					<span class="subheading">Online Auction</span>
-					<h2 class="mb-4">Top 5 sản phẩm có giá cao nhất</h2>
-				</div>
-			</div>
-			<div id="ha3" class="row">
-				<script type="text/javascript">
-				change("ha3");
-			</script>
-			</div>
-		</div>
-	</section>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+  <div class="col-2">
+    <div class="list-group" id="list-tab"role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home" style="border-color: white">Hồ sơ cá nhân</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"style="border-color: white" >Đăng sản phẩm</a>
+    </div>
+  </div>
+  <div class="col-10">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+ <section class="ftco-section ftco-agent ftco-no-pt">
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+           
+          <h2 class="mb-4">Những sản phẩm đang bán</h2>
+          </div>
+      </div>
+      <div id ="haizz" class="row">
+      <script type="text/javascript">
+              change("haizz");
+             </script>
+
+      </div>
+    </div>
+  </section>
+ <section class="ftco-section ftco-agent ftco-no-pt">
+    <div class="container">
+      <div class="row justify-content-center pb-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+            <span class="subheading">*****</span>
+          <h2 class="mb-4">Những sản phẩm đã có sở hữu</h2>
+          </div>
+      </div>
+      <div id ="haiz" class="row">
+      <script type="text/javascript">
+              change2("haiz");
+             </script>
+
+      </div>
+    </div>
+  </section>
+      </div>
+      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+        
+
+<form method="post" action="sever.html" onsubmit="return true">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Tên sản phẩm</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" >
+  </div>
+
+    <label >Hình ảnh</label>
+   <div class="form-group d-flex justify-content-between">
+
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    
+    <input type="file" class="form-control-file" id="exampleFormControlFile2">
+   
+    <input type="file" class="form-control-file" id="exampleFormControlFile3">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput2">Giá khởi điểm</label>
+    <input type="text" class="form-control" id="exampleFormControlInput2" >
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput3">Bước giá</label>
+    <input type="text" class="form-control" id="exampleFormControlInput3" >
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput4">Giá mua ngay (Nếu có)</label>
+    <input type="text" class="form-control" id="exampleFormControlInput4" >
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea5">Mô tả sản phẩm</label>
+    <textarea class="form-control" id="exampleFormControlTextarea5" rows="3"></textarea>
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Bạn muốn gia hạn không?</label>
+  </div>
+  <div class="d-flex justify-content-center ">  <button type="submit" class="btn btn-primary">Submit</button></div>
+
+
+</form>
+
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+</div>
+
      <footer class="ftco-footer ftco-section">
       	<div class="container">
         	<div class="row mb-5">
@@ -312,6 +458,9 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   </body>
 </html>
