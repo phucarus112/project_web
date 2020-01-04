@@ -7,17 +7,19 @@ var app = express();
 app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({
+  extended: true
+}));
 
 app.engine('hbs', exphbs({
-    defaultLayout: 'main.hbs',
-    layoutsDir: 'views/_layouts'
-  }));
+  defaultLayout: 'main.hbs',
+  layoutsDir: 'views/_layouts'
+}));
 
 app.set('view engine', 'hbs');
 
 app.get("/",function(req,res){
-    res.render('Online_Auction');
+  res.render('Online_Auction');
 });
 
 app.use('/admin/mobile', require('./routes/admin/mobile_route'));
@@ -29,11 +31,11 @@ app.use((req,res,next)=>{
 });
 
 app.use((err,req,res,next)=>{
-    console.error(err.stack);
-    res.status(500).send('View error  on console');
+  console.error(err.stack);
+  res.status(500).send('View error  on console');
 });
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server is running at http://localhost:${PORT}`);
 })

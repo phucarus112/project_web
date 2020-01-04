@@ -14,9 +14,10 @@ const pool = mysql.createPool({
 const mysql_query = util.promisify(pool.query).bind(pool);
 
 module.exports = {
-
    load: sql => mysql_query(sql),
-   add: (mobile,entity) => mysql_query(`insert into mobile set ?`,entity)
+   add: (mobile,entity) => mysql_query(`insert into mobile set ?`,entity),
+   del: (mobile,entity) => mysql_query(`delete from mobile where ?`,entity),
+   patch: (mobile,entity,condition) => mysql_query(`update mobile set ? where ?`,[entity,condition])
 
   /*load: sql => new Promise((done,fail) => {
    var connection = mysql.createConnection({
