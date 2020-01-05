@@ -17,24 +17,62 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+<script>
+    function handler() {
+		var ex1 = document.getElementById('Mobile');
+        var ex2 = document.getElementById('Laptop');
+        var ex3 = document.getElementById('TaiNghe');
+        var ex4 = document.getElementById('DongHo');
+
+		if(ex1.checked)
+		{
+			ex1.value= '1';
+			ex1.value= '1';
+			ex1.value = '1';
+			ex1.value = '1';
+		}
+		else if(ex2.checked)
+		{
+			ex2.value= '2';
+			ex2.value= '2';
+			ex2.value = '2';
+			ex2.value = '2';
+		}
+		else if(ex3.checked)
+		{
+			ex3.value= '3';
+			ex3.value= '3';
+			ex3.value = '3';
+			ex3.value = '3';
+		}
+		else
+		{
+			ex4.value= '4';
+			ex4.value= '4';
+			ex4.value = '4';
+			ex4.value = '4';
+		}
+	}
+</script>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="Online_Auction.html">ONLINE AUCTION</a>
+			<a class="navbar-brand" href="../../">ONLINE AUCTION</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto"> 
-					<li class="nav-item  "><a href="Online_Auction.html" class="nav-link font-size">Home</a></li>			  
+					<li class="nav-item  "><a href="../../" class="nav-link font-size">Home</a></li>			  
 					<li class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"  data-toggle="dropdown">Categories</a>			
 						<ul class="dropdown-menu" role="menu">
-							<li class="nav-item"><a href="MobileList.html" class="dropdown-item " style="font-size: 14px;">Điện thoại di động</a></li>
-                        	<li class="nav-item"><a href="LaptopList.html" class="dropdown-item "style="font-size: 14px;">Laptop</a></li>
-							<li class="nav-item"><a href="HeadphoneList.html" class="dropdown-item "style="font-size: 14px;">Headphone</a></li>
-							<li class="nav-item"><a href="WristWatchList.html" class="dropdown-item "style="font-size: 14px;">Đồng hộ đeo tay</a></li>	
+							<li class="nav-item"><a href="/admin/mobile" class="dropdown-item " style="font-size: 14px;">Điện thoại di động</a></li>
+                        	<li class="nav-item"><a href="/admin/laptop" class="dropdown-item "style="font-size: 14px;">Laptop</a></li>	
+							<li class="nav-item"><a href="/admin/headphone" class="dropdown-item " style="font-size: 14px;">Tai nghe</a></li>
+                        	<li class="nav-item"><a href="/admin/watch" class="dropdown-item "style="font-size: 14px;">Đồng hồ smart watch</a></li>			
 						</ul>
 					</li>
 					<li class="nav-item"><a href="SignUp.html" class="nav-link">Sign up</a></li>
@@ -45,93 +83,48 @@
 	</nav>
 	<!-- END nav -->
 	
+
 	<section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" 
 	style="background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/B2b8RSzfgivu3v9nb/videoblocks-online-shopping-isometric-composition-animation-available-in-4k-uhd-fullhd-and-hd-3d-loopable-realistic-video-footage_h1xaoqkcg_thumbnail-full08.png');" 
 	data-stellar-background-ratio="0.5">
+    	
       	<div class="container">
         	<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
           		<div class="col-md-9 ftco-animate pb-5 text-center">
-          			<p class="breadcrumbs"><span class="mr-2"><a href="Online_Auction.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Mobile List <i class="ion-ios-arrow-forward"></i></span></p>
-            		<h1 class="mb-3 bread">Đồng hồ đeo tay</h1>
+          			<p class="breadcrumbs"><span class="mr-2"><a href="../../">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Watch List <i class="ion-ios-arrow-forward"></i></span></p>
+            		<h1 class="mb-3 bread">Watch</h1>
           		</div>
         	</div>
       	</div>
+		 
 	</section>	
-	<form action="#" class="search-location col-md-9 mt-5" style="margin: 0 auto">
-		<div class="row justify-content-center">
-			<div class="col-lg-10 align-items-end ">
-				<div class="form-group">
-					<div class="form-field " >
-						<input type="text" class="form-control " style="border-style:ridge;" placeholder="Search item">
-						<button><span class="ion-ios-search"></span></button>
-				  	</div>
-			  	</div>
-			</div>		
-		</div>
-		<div >
-			<a class="btn btn-outline-success" href="/admin/mobile/addMobile">
-				<i class="fa fa-plus" aria-hidden="true"></i>	
-				Add new Wristwatch
-			</a>
-		</div>
-	</form>
-	<section class="ftco-section goto-here">
-    	<div class="container">
-			{{#if this.empty}}
-			<div class="card-body">
-				<p class="card-text">Không có dữ liệu</p>
+
+<div class="card shadow mb-6" >
+  <div class="card-body">
+	  <div class="text-right">
+				<a class="btn btn-outline-success" href="./">
+			<i class="fa fa-plus " aria-hidden="true" ></i>	
+			Return previous page
+				</a>
 			</div>
-			{{else}}
-			<table class="table table-striped" >
-  				<tbody>
-    				{{#each this.mobile}}
-    				<tr>
-      					<th scope="row"> 
-						<td>
-							<div class="col-md-5">
-        						<div class="property-wrap ftco-animate">
-        							<a href="#" class="img" style="background-image: url(images/work-1.jpg);"></a>
-        							<div class="text"  >
-        								<h3><a href="#">{{Name}}</a></h3>
-        								<span class="location">Giá hiện tại: {{Price}}</span><br>
-										<span class="location">Ngày đăng: {{Date}}</span> <br>
-										<span class="location">Số lượt ra giá: {{Turn}}</span> <br>
-										<span class="location">Bidder đấu giá cao nhất: {{BidderId}}</span> <br>
-										<span class="location">Thời gian còn lại: {{TimeRemain}}</span> <br>
-        								<a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-        									<span class="glyphicon glyphicon-heart">&#10084;</span> 
-        								</a>
-        							</div>
-									<a href="/admin/mobile/editMobile/{{ID}}">
-										<img src="https://img.icons8.com/cotton/2x/edit.png" width="100" height="100">
-									</a>		
-        						</div>
-        					</div>
-						</td>
-	  					</th>
-    				</tr>
-					{{/each}}
-  				</tbody>
-			</table>
-			{{/if}}
-       	</div>
-    </section>
-	<div class="row mt-5">
-		<div class="col text-center">
-			<div class="block-27">
-				<ul>
-				  	<li><a href="#">&lt;</a></li>
-				  	<li class="active"><span>1</span></li>
-				  	<li><a href="#">2</a></li>
-				  	<li><a href="#">3</a></li>
-				  	<li><a href="#">4</a></li>
-				  	<li><a href="#">5</a></li>
-				  	<li><a href="#">&gt;</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-    <footer class="ftco-footer ftco-section">
+    <form method="POST">
+      <div class="form-group">
+		  <br>
+        <input type="text" class="form-control" id="txtWatchName" name="txtWatchName" placeholder="Enter name"
+          autofocus>
+          <br>
+          <input type="text" class="form-control" id="txtWatchPrice" name="txtWatchPrice" placeholder="Enter price"
+          autofocus> <br>
+      </div>
+      <button type="submit" class="btn btn-outline-success">
+        <i class="fa fa-check" aria-hidden="true"></i>
+        Save
+      </button>
+    </form>
+  </div>
+</div>
+
+<footer class="ftco-footer ftco-section">
       	<div class="container">
         	<div class="row mb-5">
           		<div class="col-md">

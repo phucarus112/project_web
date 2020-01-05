@@ -12,18 +12,24 @@ app.use(express.urlencoded({
 }));
 
 app.engine('hbs', exphbs({
-  defaultLayout: 'main.hbs',
-  layoutsDir: 'views/_layouts'
-}));
+    defaultLayout: 'main.hbs',
+    layoutsDir: 'views/_layouts'
+  }));
 
 app.set('view engine', 'hbs');
 
 app.get("/",function(req,res){
-  res.render('Online_Auction');
+    res.render('Online_Auction');
 });
 
-app.use('/admin/mobile', require('./routes/admin/mobile_route'));
+app.use('/categories',require('./routes/category_route'));
 
+app.use('/admin/mobile', require('./routes/admin/mobile_route'));
+app.use('/admin/laptop', require('./routes/admin/laptop_route'));
+app.use('/admin/headphone', require('./routes/admin/headphone_route'));
+app.use('/admin/watch', require('./routes/admin/watch_route'));
+
+app.use('/admin/user',require('./routes/admin/user_route'));
 
 //error-handling
 app.use((req,res,next)=>{
@@ -31,11 +37,11 @@ app.use((req,res,next)=>{
 });
 
 app.use((err,req,res,next)=>{
-  console.error(err.stack);
-  res.status(500).send('View error  on console');
+    console.error(err.stack);
+    res.status(500).send('View error  on console');
 });
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 })

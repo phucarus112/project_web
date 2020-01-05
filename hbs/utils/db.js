@@ -7,36 +7,18 @@ const pool = mysql.createPool({
    port: 3306,
    user: 'root',
    password: 'Phucarus112',
-   database: 'mydb',
+   database: 'online_auction',
    insecureAuth : true
 });
 
 const mysql_query = util.promisify(pool.query).bind(pool);
 
 module.exports = {
+
    load: sql => mysql_query(sql),
-   add: (mobile,entity) => mysql_query(`insert into mobile set ?`,entity),
-   del: (mobile,entity) => mysql_query(`delete from mobile where ?`,entity),
-   patch: (mobile,entity,condition) => mysql_query(`update mobile set ? where ?`,[entity,condition])
-
-  /*load: sql => new Promise((done,fail) => {
-   var connection = mysql.createConnection({
-      
-   });
-
-   connection.connect();
-
-   connection.query(sql, (error,results,fields) =>{
-      if(error)
-      {
-         fail(error);
-      }
-       else
-       {
-         done(results);
-       }
-      
-
-      connection.end();
-   });*/
+   loadUser: sql => mysql_query(sql),
+   add: (mobile,entity) => mysql_query(`insert into product set ?`,entity),
+   del: (mobile,condition) => mysql_query(`delete from product where ?`,condition),
+   patch: (mobile,entity,condition) => mysql_query(`update product set ? where ?`,[entity,condition]),
+   
  };

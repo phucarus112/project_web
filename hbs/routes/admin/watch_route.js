@@ -3,18 +3,18 @@ const mysql = require('mysql');
 const router = express.Router();
 router.use(express.static('public'));
 const db = require('../../utils/db');
-const mobile_model = require('../../models/mobile_model');
+const watch_model = require('../../models/watch_model');
 
 router.get('/', async(req,res)=>{
-        const rows = await mobile_model.all();
-        res.render('vwMobileList/MobileList',{
-        mobile: rows,
+        const rows = await watch_model.all();
+        res.render('vwWatchList/WatchList',{
+        watch: rows,
         empty: rows.length === 0
     });
 });
 
-router.get('/addMobile',(req,res)=>{
-        res.render('vwMobileList/addMobile');
+router.get('/addWatch',(req,res)=>{
+        res.render('vwWatchList/addWatch');
 });
 
 function getRandomInt(max) {
@@ -23,20 +23,20 @@ function getRandomInt(max) {
 
 var datetime = new Date();
 
-router.post('/addMobile',async(req,res)=>{
+router.post('/addWatch',async(req,res)=>{
      const entity = {
         ID: getRandomInt(10000)+1,
-        NAME: req.body.txtMobileName,
+        NAME: req.body.txtWatchName,
         //Date:  datetime.toISOString().slice(0,10),
-        PRICE: req.body.txtMobilePrice,
+        PRICE: req.body.txtWatchPrice,
         DESCRIPTION: "1",
-        CAT_ID: 1,
+        CAT_ID: 4,
         STATUS: 0
        // TimeRemain: `168:00:00`
      }
-     const result = await mobile_model.add(entity);
+     const result = await watch_model.add(entity);
      console.log(result);
-     res.render('vwMobileList/addMobile');
+     res.render('vwWatchList/addWatch');
 });
 
 router.get('err',(req,res)=>{
@@ -50,9 +50,9 @@ router.get('err',(req,res)=>{
   //  }
 });
 
-router.get('/editMobile/:id', async(req,res)=>{
+router.get('/editWatch/:id', async(req,res)=>{
 
-  const rows = await mobile_model.single(req.params.id);
+  const rows = await watch_model.single(req.params.id);
   if(rows.length ==0)
   {
     throw new Error('Invalid ID');
@@ -61,19 +61,19 @@ router.get('/editMobile/:id', async(req,res)=>{
       Name: req.params.txtMobileName,
     }*/
 
-    res.render('vwMobileList/editMobile',{
-      mobile: rows[0]
+    res.render('vwWatchList/editWatch',{
+      watch: rows[0]
     });
 })
 
 router.post('/patch',async(req,res)=>{
-  const result = await mobile_model.patch(req.body);
-  res.redirect('/admin/mobile');
+  const result = await watch_model.patch(req.body);
+  res.redirect('/admin/watch');
 });
 
 router.post('/del',async(req,res)=>{
-  const result = await mobile_model.del(req.body.ID);
-  res.redirect('/admin/mobile');
+  const result = await watch_model.del(req.body.ID);
+  res.redirect('/admin/watch');
 });
 
 module.exports = router;
