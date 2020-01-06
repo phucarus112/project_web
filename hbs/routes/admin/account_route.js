@@ -18,8 +18,8 @@ router.post('/login', async (req, res) => {
 
     
       const rs = true;
-      //bcrypt.compareSync(req.body.password, user.PASSWORD);
-      if (req.body.password!= user.PASSWORD){
+     // bcrypt.compareSync(req.body.password, user.PASSWORD);
+      if (rs===false){
       
         return res.render('vwAccount/SignIn', {
           layout: false,

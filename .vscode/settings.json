@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "connectionTimeout": 50,
+            "database": "online_auction",
+            "dialect": "MySQL",
+            "name": "kimphuong",
+            "password": "Phucarus112",
+            "port": 3306,
+            "server": "localhost",
+            "username": "root"
+        }
+    ]
+}

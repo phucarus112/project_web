@@ -45,6 +45,7 @@ app.use('/admin/watch', require('./routes/admin/watch_route'));
 
 app.use('/account',require('./routes/admin/account_route'));
 app.use('/seller',require('./routes/seller/product_route'));
+
 //error-handling
 app.use((req,res,next)=>{
   res.send('You are lost');
