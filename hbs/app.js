@@ -1,6 +1,8 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
+const numeral = require('numeral');
 const morgan =require('morgan');
+const hbs_sections = require('express-handlebars-sections');
 require('express-async-errors');
 
 var app = express();
@@ -13,7 +15,11 @@ app.use(express.urlencoded({
 
 app.engine('hbs', exphbs({
     defaultLayout: 'main.hbs',
-    layoutsDir: 'views/_layouts'
+    layoutsDir: 'views/_layouts',
+    helpers: {
+      section: hbs_sections(),
+      format: val => numeral(val).format('0,0') + "  VND"
+    }
   }));
 
 app.set('view engine', 'hbs');
@@ -22,14 +28,10 @@ app.get("/",function(req,res){
     res.render('Online_Auction');
 });
 
-app.use('/categories',require('./routes/category_route'));
-
-app.use('/admin/mobile', require('./routes/admin/mobile_route'));
-app.use('/admin/laptop', require('./routes/admin/laptop_route'));
-app.use('/admin/headphone', require('./routes/admin/headphone_route'));
-app.use('/admin/watch', require('./routes/admin/watch_route'));
-
-app.use('/admin/user',require('./routes/admin/user_route'));
+///
+require('./middlewares/locals.mdw')(app);
+require('./middlewares/routes.mdw')(app);
+///
 
 //error-handling
 app.use((req,res,next)=>{
@@ -40,6 +42,7 @@ app.use((err,req,res,next)=>{
     console.error(err.stack);
     res.status(500).send('View error  on console');
 });
+///
 
 const PORT = 3000;
 app.listen(PORT, () => {

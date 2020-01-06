@@ -4,12 +4,40 @@ const router = express.Router();
 router.use(express.static('public'));
 const db = require('../../utils/db');
 const laptop_model = require('../../models/laptop_model');
+const config = require('../../config/default.json');
 
 router.get('/', async(req,res)=>{
-        const rows = await laptop_model.all();
+  const limit = config.paginate.limit;
+  const catId = req.params.id;
+
+  const page = req.query.page || 1;
+  if(page<1)page=1;
+  const offset = (page-1)*config.paginate.limit;
+
+  const [total,rows] = await Promise.all([
+      laptop_model.countByCat(catId),
+      laptop_model.pageByCat(catId,offset)
+  ])
+
+
+  let nPages = Math.floor(total/limit);
+  if(total % limit > 0 )nPages++;
+  const page_numbers = [];
+
+  for(i = 1;i <= nPages ;i++)
+  {
+      page_numbers.push({
+          value:i,
+          isCurrentPage: i==+page,
+      });
+  }
+        //const rows = await laptop_model.all();
         res.render('vwLaptopList/LaptopList',{
         laptop: rows,
-        empty: rows.length === 0
+        empty: rows.length === 0,
+        page_numbers,
+        pre_value: +page -1,
+        next_value: +page +1,
     });
 });
 

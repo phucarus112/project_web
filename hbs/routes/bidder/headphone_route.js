@@ -4,28 +4,41 @@ const router = express.Router();
 router.use(express.static('public'));
 const db = require('../../utils/db');
 const headphone_model = require('../../models/headphone_model');
+const config = require('../../config/default.json');
 
 router.get('/', async(req,res)=>{
-        const rows = await headphone_model.all();
-        res.render('vwHeadphoneList/HeadphoneList',{
+  const limit = config.paginate.limit;
+  const catId = req.params.id;
+
+  const page = req.query.page || 1;
+  if(page<1)page=1;
+  const offset = (page-1)*config.paginate.limit;
+
+  const [total,rows] = await Promise.all([
+      headphone_model.countByCat(catId),
+      headphone_model.pageByCat(catId,offset)
+  ])
+
+
+  let nPages = Math.floor(total/limit);
+  if(total % limit > 0 )nPages++;
+  const page_numbers = [];
+
+  for(i = 1;i <= nPages ;i++)
+  {
+      page_numbers.push({
+          value:i,
+          isCurrentPage: i==+page,
+      });
+  }
+        //const rows = await headphone_model.all();
+        res.render('vwHeadphoneList_Bidder/HeadphoneList',{
         headphone: rows,
-        empty: rows.length === 0
+        empty: rows.length === 0,
+        page_numbers,
+        pre_value: +page -1,
+        next_value: +page +1,
     });
-});
-
-router.get('err',(req,res)=>{
-   
-      throw new Error('error occured');
-});
-
-router.post('/patch',async(req,res)=>{
-  const result = await headphone_model.patch(req.body);
-  res.redirect('/bidder/headphone');
-});
-
-router.post('/del',async(req,res)=>{
-  const result = await headphone_model.del(req.body.ID);
-  res.redirect('/bidder/headphone');
 });
 
 module.exports = router;
