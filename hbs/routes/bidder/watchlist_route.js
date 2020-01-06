@@ -15,6 +15,13 @@ router.get('/addWatchedList', (req, res) => {
   res.render('vwWatched_List/addWatchedList');
 })
 
+function checkPoint(point){
+  if(point >= 8)
+    router.render('vwWatched_List/WatchedList');
+  else
+    router.render('');
+}
+
 router.post('/addWatchedList', async (req, res) => {
   const entity = {
     USER_ID: req.body.USER_ID,
