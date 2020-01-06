@@ -9,67 +9,101 @@
 		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
 
 		<!-- STYLE CSS -->
-		<link rel="stylesheet" href="css/styleSignUp.css">
+		<link rel="stylesheet" href="../../css/styleSignUp.css">
 	</head>
-
 	<body>
-		<div class="wrapper"  style="background-image: url('images/bg-registration-form-1.jpg');">
+		{{#section 'css'}}
+	<link rel="stylesheet"
+  		href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+	{{/section}}
+	{{#section 'js'}}
+	<script>
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js">
+	</script>
+	<script>
+
+		$('#txtDob').datetimepicker({
+    format: 'd/m/Y',
+    timepicker: false,
+    mask: true,
+  });
+
+		function validate(){
+			var username = document.getElementById('txtUserName');
+			var pass = document.getElementById('txtUserPassword');
+			var confirm  = document.getElementById('txtConfirm');
+			var fullname = document.getElementById('txtFullName');
+			var dob = document.getElementById('txtDob');
+			var email = document.getElementById('txtEmail');
+			if(pass.value != confirm.value)
+			{
+				alert('Fail to confirm password');
+				return false;
+			}
+			if(username.value == "" || pass.value == "" || confirm.value == "" || fullname.value == ""
+			|| dob.value == "" || email.value == "")
+			{
+				alert('Empty field');
+				return false;
+			}
+			
+			return true;
+		}
+	</script>
+	{{/section}}
+		<div class="wrapper"  style="background-image: url('https://image.freepik.com/vector-gratis/subasta-linea-isometrica_98292-2540.jpg');">
 			<div class="inner">
 				<div class="image-holder">
-					<img src="images/registration-form-1.jpg" alt="">
+					<img src="https://image.freepik.com/vector-gratis/subasta-linea-isometrica_98292-2540.jpg" alt="">
 				</div>
-				<form form method="post" action="process.html" name = "frMain" onsubmit="return check()">
+				<form   onsubmit="return validate();" method="POST" novalidate id="frmRegister" name="frmRegister">
 					<h3>Registration Form</h3>
-					<div class="form-group">
-						<input type="text" placeholder="Name" class="form-control" required autofocus>
-					</div>
+					
 					<div class="form-wrapper">
-						<input type="text" placeholder="Username" class="form-control" required autofocus>
+						<input type="text" placeholder="Username" class="form-control" required autofocus
+						id="txtUserName" name="USERNAME" >
 						<i class="zmdi zmdi-account"></i>
 					</div>
 					<div class="form-wrapper">
-						<input type="text" class="form-control" placeholder="nndkhoa@fit.hcmus.edu.vn" required autofocus>
+						<input type="password" placeholder="Password" class="form-control" required autofocus
+						id="txtUserPassword" name="raw_password">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" placeholder="Confirm Password" class="form-control" required autofocus
+						id="txtConfirm" >
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Full Name" class="form-control" required autofocus
+						id="txtFullName" name="FULLNAME">
+						<i class="zmdi zmdi-home"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" class="form-control" placeholder="abc@gmail.com" required autofocus
+						id="txtEmail" name="EMAIL">
 						<i class="zmdi zmdi-email"></i>
 					</div>
 					<div class="form-wrapper">
-						<select name="thanhPho" id="" class="form-control" style="font-family:Poppins-Regular">
-							<Script type="text/javascript">
-								var A =['An Giang','Bà Rịa - Vũng Tàu','Bắc Giang','Bắc Cạn','Bắc Liêu','Bắc Ninh','Bến tre','Bình Định','Bình Dương','Bình Phước','Bình Thuận','Cà Mau ','Cao Bằng']
-								for(var i=1;i<=12;i++)
-								{
-									document.writeln("<option value='"+i+"' >"+ A[i] +"</option>")
-								}
-							</Script>
-						</select>
-						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+						<input type="text" class="form-control" placeholder="01/01/1970" required autofocus
+						id="txtDob" name="DOB">
+						<i class=""></i>
 					</div>
-					<div class="form-wrapper">
-						<input type="password" placeholder="Password" class="form-control" required autofocus>
-						<i class="zmdi zmdi-lock"></i>
-					</div>
-					<div class="form-wrapper">
-						<input type="password" placeholder="Confirm Password" class="form-control" required autofocus>
-						<i class="zmdi zmdi-lock"></i>
-					</div>
-                     <div class="form-group">
-                        <div class="g-recaptcha" data-sitekey="6LfKURIUAAAAAO50vlwWZkyK_G2ywqE52NU7YO0S" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
-                        <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="d-flex flex-row-reverse">
-						<a href="SignIn.html">Sign In</a>
-					</div>
-					<button><a href="Online_Auction_Bidder.html" style="color: white">Register
-						<i class="zmdi zmdi-arrow-right"></i>
+                        <div class="d-flex flex-row-reverse">
+						<a href="/account/login">Sign In</a>
+						
+					   </div>
+					<button><a type="submit" style="color: white">Register
 					</a>
 					</button>
 				</form>
 			</div>
 		</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<!--script src='https://www.google.com/recaptcha/api.js'></script-->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!--script src='https://www.google.com/recaptcha/api.js'></script-->
  
 	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

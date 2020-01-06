@@ -1,6 +1,8 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
+const numeral = require('numeral');
 const morgan =require('morgan');
+const hbs_sections = require('express-handlebars-sections');
 require('express-async-errors');
 const session = require('express-session');
 var app = express();
@@ -20,7 +22,11 @@ app.use(session({
 }))
 app.engine('hbs', exphbs({
     defaultLayout: 'main.hbs',
-    layoutsDir: 'views/_layouts'
+    layoutsDir: 'views/_layouts',
+    helpers: {
+      section: hbs_sections(),
+      format: val => numeral(val).format('0,0') + "  VND"
+    }
   }));
 
 app.set('view engine', 'hbs');
@@ -48,6 +54,7 @@ app.use((err,req,res,next)=>{
     console.error(err.stack);
     res.status(500).send('View error  on console');
 });
+///
 
 const PORT = 3000;
 app.listen(PORT, () => {
