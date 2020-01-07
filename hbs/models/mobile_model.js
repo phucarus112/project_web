@@ -3,6 +3,7 @@ const config = require('../config/default.json');
 
 module.exports = {
     all: () => db.load('select * from product where CAT_ID = 1'),
+    detail: id => db.load(`select * from product where ID = ${id}`),
     single: id => db.load( `select * from product where CAT_ID = 1 && ID = ${id}`),
     pageByCat: (catId,offset) => db.load( `select * from product where CAT_ID = 1 limit 
     ${config.paginate.limit} offset ${offset}`),
@@ -18,5 +19,6 @@ module.exports = {
         console.log(entity,condition);
        return db.patch('product',entity,condition);
     },
+    addWatchList: entity => db.addWatchList('watch_list',entity),
 
 }

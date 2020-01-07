@@ -41,4 +41,14 @@ router.get('/:id/products',async(req,res)=>{
     });
 });
 
+router.get('/detail/:id',async(req,res)=>{
+
+    const rows = await product_model.detail(req.params.id);
+    res.render('vwProducts/detail',{
+        detail: rows[0],
+        empty: rows.length === 0,
+    });
+    
+});
+
 module.exports = router;

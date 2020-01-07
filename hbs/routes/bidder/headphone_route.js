@@ -41,4 +41,20 @@ router.get('/', async(req,res)=>{
     });
 });
 
+router.get('/detail/:id',async(req,res)=>{
+
+    const rows = await headphone_model.detail(req.params.id);
+    res.render('vwHeadphoneList_Bidder/detail',{
+        detail: rows[0],
+        empty: rows.length === 0,
+    });
+    
+});
+
+router.post('/detail/:id',async(req,res)=>{
+
+   
+    
+});
+
 module.exports = router;

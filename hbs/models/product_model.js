@@ -3,6 +3,7 @@ const config = require('../config/default.json');
 
 module.exports = {
     all: () => db.load('select * from product'),
+    detail: id => db.load(`select * from product where ID = ${id}`),
     allByCat: catId => db.load( `select * from product where CAT_ID = ${catId}`),
     pageByCat: (catId,offset) => db.load( `select * from product where CAT_ID = ${catId} limit 
     ${config.paginate.limit} offset ${offset}`),

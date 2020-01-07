@@ -38,7 +38,7 @@
 						</ul>
 					</li>
 					<li class="nav-item"><a href="/account/register" class="nav-link">Sign up</a></li>
-					<li class="nav-item"><a href="SignIn.html" class="nav-link">Sign in</a></li>
+					<li class="nav-item"><a href="/account/login" class="nav-link">Sign in</a></li>
 				</ul>
 			</div>
 		</div>
@@ -75,9 +75,9 @@
 			</div>
 			{{else}}
     			{{#each this.products}}
-				<div class="col-md-5" >
+				<div class="col-md-5">
         		<div class="property-wrap ftco-animate" >
-        			<a href="#" class="img" style="background-image: url(/imgs/sp/{{ID}}/main_thumb.jpg);"></a>
+        			<a href="/categories/detail/{{ID}}" class="img" style="background-image: url(/imgs/sp/{{ID}}/main_thumb.jpg);"></a>
         			<div class="text"  >
         				<h3><a href="#">{{NAME}}</a></h3>
         				<span class="location">Giá hiện tại: {{format PRICE}}</span><br>

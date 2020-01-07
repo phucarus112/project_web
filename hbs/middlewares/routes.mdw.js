@@ -18,4 +18,7 @@ module.exports = function(app){
     app.use('/bidder/laptop', require('../routes/bidder/laptop_route'));
     app.use('/bidder/headphone', require('../routes/bidder/headphone_route'));
     app.use('/bidder/watch', require('../routes/bidder/watch_route'));
+
+    //seller
+    app.use('/seller',require('../routes/seller/product_route'));
 }
